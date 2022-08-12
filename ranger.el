@@ -2253,6 +2253,7 @@ is set, show literally instead of actual buffer."
                entry-name
                ranger-preview-file)
       (unless (or
+               (file-symlink-p entry-name)
                (> fsize (* 1024 1024 ranger-max-preview-size))
                (member (file-name-extension entry-name)
                        ranger-excluded-extensions))
